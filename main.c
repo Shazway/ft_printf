@@ -4,5 +4,5 @@ int main(void)
 {
 	char *str = "%052d";
     printf("%s\n", str);
-	ft_parse(str);
+	ft_printf("%052c", str);
 }

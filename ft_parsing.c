@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:11:27 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/05/25 17:01:14 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:08:10 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_initialize(t_data *parsing)
 {
-	parsing->flag = 0;
+	parsing->flag = -1;
 	parsing->width = 0;
 	parsing->lwidth = 0;
 	parsing->precision = 0;
@@ -27,7 +27,7 @@ void	ft_flag(char **str, t_data *parsing)
 {
 	while (*str && **str && (**str == '-' || **str == '0'))
 	{
-		if (parsing->flag != '-')	
+		if (parsing->flag != '-')
 			parsing->flag = **str;
 		(*str)++;
 	}
@@ -54,11 +54,8 @@ void	ft_precision(char **str, t_data *parsing)
 		(*str)++;
 }
 
-void	ft_parse(char *str)
+void	ft_parsing(char *str, t_data *parsing)
 {
-	t_data	*parsing;
-	if (!(parsing = malloc(sizeof(t_data))))
-   		return ;
 	str++;
 	ft_initialize(parsing);
 	ft_flag(&str, parsing);

@@ -4,9 +4,9 @@ SRCS_PUTFD	=	libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c li
 SRCS_IS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c libft/ft_toupper.c libft/ft_tolower.c
 SRCS_TO		=	libft/ft_atoi.c libft/ft_itoa.c
 SRCS_MALLOC	=	libft/ft_calloc.c libft/ft_substr.c libft/ft_strjoin.c libft/ft_strtrim.c libft/ft_split.c libft/ft_strmapi.c
-SRCS		=	${SRCS_MEM} ${SRCS_STR} ${SRCS_PUTFD} ${SRCS_IS} ${SRCS_TO} ${SRCS_MALLOC} ${SRCS_PRINTF}
 SRCS_BONUS	=	${SRCS} libft/ft_lstnew.c libft/ft_lstadd_front.c libft/ft_lstsize.c libft/ft_lstlast.c libft/ft_lstadd_back.c libft/ft_lstdelone.c libft/ft_lstclear.c libft/ft_lstiter.c libft/ft_lstmap.c
-SRCS_PRINTF	=	ft_parse.c
+SRCS_PRINTF	=	ft_parse.c ft_printf.c
+SRCS		=	${SRCS_MEM} ${SRCS_STR} ${SRCS_PUTFD} ${SRCS_IS} ${SRCS_TO} ${SRCS_MALLOC} ${SRCS_PRINTF}
 
 OBJS	=	${SRCS:.c=.o}
 OBJS_BONUS	=	${SRCS_BONUS:.c=.o}

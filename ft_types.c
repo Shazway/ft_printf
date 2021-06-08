@@ -1,35 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_types.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 14:03:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 17:25:50 by tmoragli         ###   ########.fr       */
+/*   Created: 2021/05/30 13:07:38 by tmoragli          #+#    #+#             */
+/*   Updated: 2021/05/30 13:09:58 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
+#include "ft_printf.h"
 
-typedef struct		s_data
-{
-	char	flag;
-	int		width;
-	int		lwidth;
-	char	precision;
-	char	asterisk;
-	int		lprecision;
-	char	type;
-	va_list	argptr;
-}					t_data;
-
-void	ft_parsing(char *str, t_data *parsing);
-int		ft_printf(const char *str, ...);
-
-#endif
+int		ft_conversion(t_flag parsing, )
