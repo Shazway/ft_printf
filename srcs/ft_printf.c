@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 19:08:46 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:11:06 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_c(t_data *parsing, char c)
 		}
 		ft_printchar(c, parsing);
 	}
-	else if (parsing->width > 0 && parsing->flag == -1)
+	else if (parsing->width > 0 && parsing->flag == 0)
 	{
 		j = parsing->lwidth - 1;
 		while (j > 0)
