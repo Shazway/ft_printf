@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:03:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 17:56:55 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:00:58 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct		s_data
 	char	asterisk;
 	int		lprecision;
 	char	type;
+	int		count;
 	va_list	argptr;
 }					t_data;
 

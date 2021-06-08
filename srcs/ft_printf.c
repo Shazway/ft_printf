@@ -6,22 +6,28 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 18:03:56 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:05:04 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	ft_printchar(char c, t_data *parsing)
+{
+	write(1, &c, 1);
+	parsing->count++;
+}
 
 void	ft_c(t_data *parsing, char c)
 {
 	int j;
 	if (parsing->flag == '-' && parsing->lwidth != 0)
 	{
-		write(1, &c, 1);
+		ft_printchar(c, parsing);
 		j = parsing->lwidth - 1;
 		while (j > 0)
 		{
-			write(1, " ", 1);
+			ft_printchar(' ', parsing);
 			j--;
 		}
 	}
@@ -30,23 +36,23 @@ void	ft_c(t_data *parsing, char c)
 		j = parsing->lwidth - 1;
 		while (j > 0)
 		{
-			write(1, "0", 1);
+			ft_printchar('0', parsing);
 			j--;
 		}
-		write(1, &c, 1);
+		ft_printchar(c, parsing);
 	}
 	else if (parsing->width > 0 && parsing->flag == -1)
 	{
 		j = parsing->lwidth - 1;
 		while (j > 0)
 		{
-			write(1, " ", 1);
+			ft_printchar(' ', parsing);
 			j--;
 		}
-		write(1, &c, 1);
+		ft_printchar(c, parsing);
 	}
 	else
-		write(1, &c, 1);
+		ft_printchar(c, parsing);
 }
 
 void	ft_node(t_data *parsing)
@@ -58,7 +64,9 @@ void	ft_node(t_data *parsing)
 int		ft_printf(const char *str, ...)
 {
 	t_data	*parsing;
+	int count;
 
+	parsing->count = 0;
 	if (!(parsing = malloc(sizeof(t_data))))
 		return (0);
 	va_start(parsing->argptr, str);
@@ -71,9 +79,10 @@ int		ft_printf(const char *str, ...)
 			ft_node(parsing);
 		}
 		else
-			write(1, str, 1);
+			ft_printchar(*str, parsing);
 		str++;
 	}
+	count = parsing->count;
 	free(parsing);
-	return (1);
+	return (count);
 }
