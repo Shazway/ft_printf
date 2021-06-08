@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 17:19:21 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:03:56 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_c(t_data *parsing, char c)
 			j--;
 		}
 	}
-	if (parsing->flag == 0)
+	else if (parsing->flag == '0')
 	{
 		j = parsing->lwidth - 1;
 		while (j > 0)
@@ -35,7 +35,7 @@ void	ft_c(t_data *parsing, char c)
 		}
 		write(1, &c, 1);
 	}
-	if (parsing->width > 0 && parsing->flag == -1)
+	else if (parsing->width > 0 && parsing->flag == -1)
 	{
 		j = parsing->lwidth - 1;
 		while (j > 0)
@@ -47,7 +47,6 @@ void	ft_c(t_data *parsing, char c)
 	}
 	else
 		write(1, &c, 1);
-	
 }
 
 void	ft_node(t_data *parsing)
@@ -58,23 +57,23 @@ void	ft_node(t_data *parsing)
 
 int		ft_printf(const char *str, ...)
 {
-	int i;
 	t_data	*parsing;
 
 	if (!(parsing = malloc(sizeof(t_data))))
 		return (0);
 	va_start(parsing->argptr, str);
-	i = 0;
-	while (str && str[i])
+	while (str && *str)
 	{
-		if (str[i] == '%')
-		{	
-			ft_parsing(str, parsing);
+		if (*str == '%')
+		{
+			str++;
+			ft_parsing((char **)&str, parsing);
 			ft_node(parsing);
 		}
 		else
-			write(1, &str[i], 1);
-		i++;
+			write(1, str, 1);
+		str++;
 	}
+	free(parsing);
 	return (1);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/11 14:11:27 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 17:08:10 by tmoragli         ###   ########.fr       */
+/*   Created: 2021/06/08 17:32:04 by tmoragli          #+#    #+#             */
+/*   Updated: 2021/06/08 18:01:40 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_initialize(t_data *parsing)
 {
-	parsing->flag = -1;
+	parsing->flag = 0;
 	parsing->width = 0;
 	parsing->lwidth = 0;
 	parsing->precision = 0;
@@ -54,13 +54,12 @@ void	ft_precision(char **str, t_data *parsing)
 		(*str)++;
 }
 
-void	ft_parsing(char *str, t_data *parsing)
+void	ft_parsing(char **str, t_data *parsing)
 {
-	str++;
 	ft_initialize(parsing);
-	ft_flag(&str, parsing);
-	ft_width(&str, parsing);
-	ft_precision(&str, parsing);
-	parsing->type = *str;
-	printf("flag = %c\nwidth = %d %d\nprecision = %d %d\ntype = %c\n", parsing->flag, parsing->width, parsing->lwidth, parsing->precision, parsing->lprecision, parsing->type);
+	ft_flag(str, parsing);
+	ft_width(str, parsing);
+	ft_precision(str, parsing);
+	parsing->type = **str;
+	//printf("flag = %d\nwidth = %d %d\nprecision = %d %d\ntype = %c\n", parsing->flag, parsing->width, parsing->lwidth, parsing->precision, parsing->lprecision, parsing->type);
 }

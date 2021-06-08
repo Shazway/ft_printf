@@ -6,13 +6,13 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:03:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 17:25:50 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:56:55 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "libft/libft.h"
+# include "libft.h"
 # include <unistd.h>
 # include <stdio.h>
 # include <stdarg.h>
@@ -29,7 +29,7 @@ typedef struct		s_data
 	va_list	argptr;
 }					t_data;
 
-void	ft_parsing(char *str, t_data *parsing);
 int		ft_printf(const char *str, ...);
+void	ft_parsing(char **str, t_data *parsing);
 
 #endif

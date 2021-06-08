@@ -1,42 +1,57 @@
-SRCS_MEM	=	libft/ft_memset.c libft/ft_bzero.c libft/ft_memcpy.c libft/ft_memccpy.c libft/ft_memmove.c libft/ft_memchr.c libft/ft_memcmp.c
-SRCS_STR	=	libft/ft_strchr.c libft/ft_strdup.c libft/ft_strrchr.c libft/ft_strncmp.c libft/ft_strlcpy.c libft/ft_strlcat.c libft/ft_strnstr.c libft/ft_strlen.c
-SRCS_PUTFD	=	libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c
-SRCS_IS		=	libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.c libft/ft_isprint.c libft/ft_toupper.c libft/ft_tolower.c
-SRCS_TO		=	libft/ft_atoi.c libft/ft_itoa.c
-SRCS_MALLOC	=	libft/ft_calloc.c libft/ft_substr.c libft/ft_strjoin.c libft/ft_strtrim.c libft/ft_split.c libft/ft_strmapi.c
-SRCS_BONUS	=	${SRCS} libft/ft_lstnew.c libft/ft_lstadd_front.c libft/ft_lstsize.c libft/ft_lstlast.c libft/ft_lstadd_back.c libft/ft_lstdelone.c libft/ft_lstclear.c libft/ft_lstiter.c libft/ft_lstmap.c
-SRCS_PRINTF	=	ft_parse.c ft_printf.c
-SRCS		=	${SRCS_MEM} ${SRCS_STR} ${SRCS_PUTFD} ${SRCS_IS} ${SRCS_TO} ${SRCS_MALLOC} ${SRCS_PRINTF}
+SRCS_PRINTF		=	srcs/ft_printf.c srcs/ft_parsing.c main.c
 
-OBJS	=	${SRCS:.c=.o}
-OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
+INCLUDES		=	-Iincludes								\
+					-Ilibft
 
-CC		=	gcc
-RM		=	rm -f
-NAME	=	printf.a
+LD_FLAGS		=	-Llibft -lft
 
-FLAGS	=	-Wall -Werror -Wextra
+NAME			=	printf
+SRCS			=	$(SRCS_PRINTF)
+
+
+
+OBJS			=	$(SRCS:.c=.o)
+CC				=	gcc
+RM				=	@rm -f
+
+LIBFT			=	libft/libft.a
+
+FLAGS			=	-Wall -Werror -Wextra $(INCLUDES) -fsanitize=address -g
 
 .c.o:
-			${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+					@$(CC) -c $< -o $(<:.c=.o) $(FLAGS)
 
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
-			ranlib ${NAME}
+$(NAME):			clear_screen $(LIBFT) start_message $(OBJS)
+					@if [ "$?" = "clear_screen start_message" ]; then echo -n "\033[1A\033[30C\033[0;33mAlready done\033[15D\033[1B\033[1A\033[2D\033[1;32m✓\033[26D\033[1B\033[0m";else echo -n "\033[1A\033[25C\033[1;32m✓\033[26D\033[1B\033[0m"; fi
+					@$(CC) $(OBJS) $(FLAGS) -o $(NAME) $(LD_FLAGS)
 
-all:		${NAME}
+$(LIBFT):
+					@make -s -C libft -f Makefile
+
+
+all:				$(NAME)
+
+bonus:				re
+
+clear_screen:
+					@clear
 
 clean:
-			${RM} ${OBJS}
-			${RM} ${OBJS_BONUS}
+					@clear
+					@make -s -C libft -f Makefile clean
+					@echo "\033[0;33mCleaning \033[1;31m$(NAME)\033[0;33m's objects\033[0m"
+					$(RM) $(OBJS)
 
-fclean:		clean
-			${RM} ${NAME}
+fclean:				clean
+					@make -s -C libft -f Makefile fclean
+					@echo "\033[0;33mRemoving \033[1;31m$(NAME)\033[0;33m.\033[0m"
+					$(RM) $(NAME)
 
-re:			fclean all
+start_message:
+					@echo "\033[0;33mMaking \033[1;31m$(NAME)\033[0;33m\t\t\033[1;30m[\033[1;31mX\033[1;30m]\033[0m"
 
-bonus:	${OBJS_BONUS}
-			ar rc ${NAME} ${OBJS_BONUS}
-			ranlib ${NAME}
+re:					fclean $(LIBFT) start_message $(OBJS)
+					@if [ "$?" = "fclean start_message" ]; then echo -n "\033[1A\033[30C\033[0;33mAlready done\033[15D\033[1B\033[1A\033[2D\033[1;32m✓\033[26D\033[1B\033[0m";else echo -n "\033[1A\033[25C\033[1;32m✓\033[26D\033[1B\033[0m"; fi
+					@$(CC) $(OBJS) $(FLAGS) -o $(NAME) $(LD_FLAGS)
 
-.PHONY:		all clean fclean re
+.PHONY:				all clean fclean re
