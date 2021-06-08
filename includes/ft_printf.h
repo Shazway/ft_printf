@@ -6,17 +6,16 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:03:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 17:56:55 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/06/08 18:55:14 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "libft.h"
 # include <unistd.h>
 # include <stdio.h>
 # include <stdarg.h>
-
+# include "../libft/libft.h"
 typedef struct		s_data
 {
 	char	flag;
