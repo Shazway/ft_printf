@@ -2,6 +2,7 @@
 
 int main(void)
 {
-	printf("[%-c]\n", 'r');
-	ft_printf("[%-c]", 'r');
+	printf("\n\n");
+	printf("printf    : [%u]\n\n", 45651653);
+	ft_printf("ft_printf : [%u]\n\n", 45651653);
 }

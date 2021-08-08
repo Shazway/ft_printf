@@ -1,4 +1,4 @@
-SRCS_PRINTF		=	srcs/ft_printf.c srcs/ft_parsing.c
+SRCS_PRINTF		=	srcs/ft_printf.c srcs/ft_parsing.c srcs/ft_putnbr_base.c srcs/ft_putnbr_base_2.c
 
 INCLUDES		=	-Iincludes								\
 					-Ilibft

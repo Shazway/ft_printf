@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 17:32:04 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/06/08 18:01:40 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/07/05 23:28:24 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,16 @@ void	ft_width(char **str, t_data *parsing)
 void	ft_precision(char **str, t_data *parsing)
 {
 	if (**str == '.')
-	{	
+	{
 		parsing->precision = 1;
 		(*str)++;
 		parsing->lprecision = ft_atoi(*str);
+	}
+	if (**str == '*')
+	{
+		parsing->asterisk = 1;
+		(*str)++;
+		parsing->lprecision = va_arg(parsing->argptr, int);
 	}
 	while (*str && **str && ft_isdigit(**str))
 		(*str)++;

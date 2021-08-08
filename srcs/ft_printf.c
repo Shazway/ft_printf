@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/07/04 20:37:30 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/08 23:11:06 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,29 @@ void	ft_printchar(char c, t_data *parsing)
 	write(1, &c, 1);
 	parsing->count++;
 }
-
+void	ft_lprintarray(char *str, t_data *parsing, int precision)
+{
+	while (*str && precision)
+	{
+		write(1, str, 1);
+		str++;
+		precision--;
+	}
+	parsing->count++;
+}
+void	ft_printarray(char *str, t_data *parsing)
+{
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
+	parsing->count++;
+}
 void	ft_c(t_data *parsing, char c)
 {
 	int j;
+
 	if (parsing->flag == '-' && parsing->lwidth != 0)
 	{
 		ft_printchar(c, parsing);
@@ -55,12 +74,72 @@ void	ft_c(t_data *parsing, char c)
 		ft_printchar(c, parsing);
 }
 
+void	ft_s(t_data *parsing, char *s)
+{
+	int j;
+
+	if (parsing->flag == '-' && parsing->lwidth != 0)
+	{
+		ft_lprintarray(s, parsing, parsing->lprecision);
+		j = parsing->lwidth -  ft_strlen(s);
+		if (parsing->precision != 0)
+			j = parsing->lwidth - parsing->lprecision;
+		else
+			ft_printarray(s, parsing);
+		while (j > 0)
+		{
+			ft_printchar(' ', parsing);
+			j--;
+		}
+	}
+	if ((!parsing->flag) && parsing->precision && parsing->lprecision > 0)
+		ft_lprintarray(s, parsing, parsing->lprecision);
+	else if((!parsing->flag))
+		ft_printarray(s, parsing);
+}
+void	ft_hex(t_data *parsing, int nb)
+{
+	if (parsing->type == 'x')
+		ft_putnbr_base(nb, "0123456789abcdef");
+	if (parsing->type == 'X')
+		ft_putnbr_base(nb, "0123456789ABCDEF");
+}
+void	ft_d(t_data *parsing, int nb)
+{
+	(void)parsing;
+	ft_putnbr_base(nb, "0123456789");
+}
+void	ft_p(t_data *parsing, long unsigned int p)
+{
+	if (p ==  0)
+		write(1, &p, 1);
+	write(1, "0", 1);
+	write(1, "x", 1);
+	ft_putnbr_base_2(p, "0123456789abcdef");
+	parsing->type = 0;
+}
+void	ft_u(t_data *parsing, unsigned int u)
+{
+	(void)parsing;
+	ft_putnbr_base_2(u, "0123456789");
+}
 void	ft_node(t_data *parsing)
 {
 	if (parsing->type == 'c')
 		ft_c(parsing, va_arg(parsing->argptr, int));
+	if (parsing->type == 's')
+		ft_s(parsing, va_arg(parsing->argptr, char *));
+	if (parsing->type == 'p')
+		ft_p(parsing, va_arg(parsing->argptr, long unsigned int));
+	if (parsing->type == 'd' || parsing->type == 'i')
+		ft_d(parsing, va_arg(parsing->argptr, int));
+	if (parsing->type == 'u')
+		ft_u(parsing, va_arg(parsing->argptr, unsigned int));
+	if ((parsing->type == 'x') || (parsing->type == 'X'))
+		ft_hex(parsing, va_arg(parsing->argptr, int));
+	if ((parsing->type == 'X') || (parsing->type == 'X'))
+		ft_hex(parsing, va_arg(parsing->argptr, int));
 }
-
 int		ft_printf(const char *str, ...)
 {
 	t_data	*parsing;
