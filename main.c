@@ -3,6 +3,6 @@
 int main(void)
 {
 	printf("\n\n");
-	printf("printf    : [%u]\n\n", 45651653);
-	ft_printf("ft_printf : [%u]\n\n", 45651653);
+	printf("printf    : [%x]\n\n", 42);
+	ft_printf("ft_printf : [%x]\n\n", 42);
 }

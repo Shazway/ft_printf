@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/08 23:11:06 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/09 00:58:40 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,12 @@ void	ft_s(t_data *parsing, char *s)
 	else if((!parsing->flag))
 		ft_printarray(s, parsing);
 }
-void	ft_hex(t_data *parsing, int nb)
+void	ft_hex(t_data *parsing, unsigned int nb)
 {
 	if (parsing->type == 'x')
-		ft_putnbr_base(nb, "0123456789abcdef");
+		ft_putnbr_base_2(nb, "0123456789abcdef");
 	if (parsing->type == 'X')
-		ft_putnbr_base(nb, "0123456789ABCDEF");
+		ft_putnbr_base_2(nb, "0123456789ABCDEF");
 }
 void	ft_d(t_data *parsing, int nb)
 {
@@ -134,9 +134,9 @@ void	ft_node(t_data *parsing)
 	if (parsing->type == 'd' || parsing->type == 'i')
 		ft_d(parsing, va_arg(parsing->argptr, int));
 	if (parsing->type == 'u')
-		ft_u(parsing, va_arg(parsing->argptr, unsigned int));
+		ft_u(parsing, (unsigned int)va_arg(parsing->argptr, unsigned int));
 	if ((parsing->type == 'x') || (parsing->type == 'X'))
-		ft_hex(parsing, va_arg(parsing->argptr, int));
+		ft_hex(parsing, (unsigned int)va_arg(parsing->argptr, unsigned int));
 	if ((parsing->type == 'X') || (parsing->type == 'X'))
 		ft_hex(parsing, va_arg(parsing->argptr, int));
 }
