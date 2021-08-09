@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:03:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/08 22:42:46 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 00:59:40 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct		s_data
 
 int		ft_printf(const char *str, ...);
 void	ft_parsing(char **str, t_data *parsing);
-void	ft_putnbr_base(int nbr, char *base);
+void	ft_putnbr_base(int nbr, char *base, int count);
 void	ft_putnbr_base_2(long unsigned int nbr, char *base);
 
 #endif

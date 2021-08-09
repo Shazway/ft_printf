@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 21:00:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 00:58:47 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 00:59:46 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	check_base(char *base)
 	return (1);
 }
 
-int				ft_putnbr_base(int nbr, char *base, count)
+int				ft_putnbr_base(int nbr, char *base, int count)
 {
 	if (nbr * -1 - 1 == 2147483647 || !(check_base(base)))
 		return ;
