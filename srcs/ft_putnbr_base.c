@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 21:00:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 00:59:46 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 01:06:56 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	check_base(char *base)
 	return (1);
 }
 
-int				ft_putnbr_base(int nbr, char *base, int count)
+void			ft_putnbr_base(int nbr, char *base, t_data *parsing)
 {
 	if (nbr * -1 - 1 == 2147483647 || !(check_base(base)))
 		return ;
@@ -52,13 +52,12 @@ int				ft_putnbr_base(int nbr, char *base, int count)
 	}
 	if (nbr / ft_strlen(base) > 0)
 	{	
-		count++;
-		ft_putnbr_base(nbr / ft_strlen(base), base);
+		parsing->count++;
+		ft_putnbr_base(nbr / ft_strlen(base), base, parsing);
 	}
 	if (nbr > 0)
 	{
-		count++;
+		parsing->count++;
 		ft_putchar(base[nbr % ft_strlen(base)]);
 	}
-	return (count);
 }
