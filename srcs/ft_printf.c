@@ -6,35 +6,36 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/09 17:07:04 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/09 19:11:34 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 void	ft_printchar(char c, t_data *parsing)
-{
+{	
 	write(1, &c, 1);
 	parsing->count++;
+	//printf("count = %d ", parsing->count);
 }
 void	ft_lprintarray(char *str, t_data *parsing, int precision)
 {
-	while (*str && precision)
+	while (*str && precision && str)
 	{
 		write(1, str, 1);
 		str++;
 		precision--;
+		parsing->count++;
 	}
-	parsing->count++;
 }
 void	ft_printarray(char *str, t_data *parsing)
 {
-	while (*str)
+	while (*str && str)
 	{
 		write(1, str, 1);
 		str++;
+		parsing->count++;
 	}
-	parsing->count++;
 }
 void	ft_c(t_data *parsing, char c)
 {
@@ -160,7 +161,9 @@ int		ft_printf(const char *str, ...)
 			ft_node(parsing);
 		}
 		else
+			//printf("ici");
 			ft_printchar(*str, parsing);
+		//printf("c = %c ", *str);
 		str++;
 	}
 	count = parsing->count;
