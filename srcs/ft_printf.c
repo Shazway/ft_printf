@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/09 00:58:40 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/09 17:07:04 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,8 @@ void	ft_u(t_data *parsing, unsigned int u)
 }
 void	ft_node(t_data *parsing)
 {
+	if (parsing->type == '%')
+		write(1, "%", 1);
 	if (parsing->type == 'c')
 		ft_c(parsing, va_arg(parsing->argptr, int));
 	if (parsing->type == 's')

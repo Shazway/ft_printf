@@ -3,6 +3,6 @@
 int main(void)
 {
 	printf("\n\n");
-	printf("printf    : [%x]\n\n", 42);
-	ft_printf("ft_printf : [%x]\n\n", 42);
+	printf("printf    : [%% Tu manges des pommes ? %d]\n\n");
+	ft_printf("ft_printf : [%% Tu manges des pommes ? %d]\n\n");
 }
