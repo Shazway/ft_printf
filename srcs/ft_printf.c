@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 01:41:39 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 01:42:42 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,9 @@ void	ft_s(t_data *parsing, char *s)
 void	ft_hex(t_data *parsing, unsigned int nb)
 {
 	if (parsing->type == 'x')
-		ft_putnbr_base_2(nb, "0123456789abcdef");
+		ft_putnbr_base_2(nb, "0123456789abcdef", parsing);
 	if (parsing->type == 'X')
-		ft_putnbr_base_2(nb, "0123456789ABCDEF");
+		ft_putnbr_base_2(nb, "0123456789ABCDEF", parsing);
 }
 void	ft_d(t_data *parsing, int nb)
 {
