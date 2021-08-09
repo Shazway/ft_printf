@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 00:51:23 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 00:53:31 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,8 @@ void	ft_hex(t_data *parsing, unsigned int nb)
 }
 void	ft_d(t_data *parsing, int nb)
 {
-	(void)parsing;
+	int i;
+	i = 0;
 	ft_putnbr_base(nb, "0123456789");
 }
 void	ft_p(t_data *parsing, long unsigned int p)
