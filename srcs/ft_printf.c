@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 01:31:01 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 01:41:39 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,8 +134,14 @@ void	ft_p(t_data *parsing, long unsigned int p)
 }
 void	ft_u(t_data *parsing, unsigned int u)
 {
-	(void)parsing;
-	ft_putnbr_base_2(u, "0123456789");
+	if (u == 0)
+	{
+		write(1, "0", 1);
+		parsing->count++;
+		return ;
+	}
+	parsing->count++;
+	ft_putnbr_base_2(u, "0123456789", parsing);
 }
 void	ft_node(t_data *parsing)
 {
