@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/09 19:11:34 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 00:48:44 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ void	ft_lprintarray(char *str, t_data *parsing, int precision)
 }
 void	ft_printarray(char *str, t_data *parsing)
 {
-	while (*str && str)
+	while (str && *str)
 	{
-		write(1, str, 1);
+		write(1, &str[i], 1);
 		str++;
 		parsing->count++;
 	}
@@ -81,6 +81,7 @@ void	ft_s(t_data *parsing, char *s)
 
 	if (parsing->flag == '-' && parsing->lwidth != 0)
 	{
+		printf("ici");
 		ft_lprintarray(s, parsing, parsing->lprecision);
 		j = parsing->lwidth -  ft_strlen(s);
 		if (parsing->precision != 0)
