@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 01:27:11 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 01:31:01 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,12 @@ void	ft_d(t_data *parsing, int nb)
 	if (nb == -2147483648)
 	{
 		ft_s(parsing, "-2147483648");
+		return ;
+	}
+	if (nb == 0)
+	{	
+		write(1, "0", 1);
+		parsing->count++;
 		return ;
 	}
 	parsing->count++;
