@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 02:40:39 by telli             #+#    #+#             */
-/*   Updated: 2021/08/10 15:46:45 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:47:06 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	count = ft_count_words(s, c);
-	str = malloc(sizeof(char *) * (count + 1);
+	str = malloc(sizeof(char *) * (count + 1));
 	if (str == NULL)
 		return (NULL)
 	str[count] = NULL;
