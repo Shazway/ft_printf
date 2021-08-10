@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 01:10:22 by telli             #+#    #+#             */
-/*   Updated: 2021/07/18 16:57:50 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:31:16 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char				*ft_strchr(char const *s, int c);
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
-long int	ft_strlen(const char *str);
+long int			ft_strlen(const char *str);
 char				*ft_strmapi(char const *s, char (*f) (unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *s1, const char *s2, size_t len);
@@ -66,5 +66,5 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
 					void *(*f)(void *), void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
-
+int					ft_malloc_array(t_size size, char *p, int count);
 #endif
