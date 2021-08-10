@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 00:21:17 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 15:52:45 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:39:06 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *cast_dst;
-	unsigned char *cast_src;
+	unsigned char	*cast_dst;
+	unsigned char	*cast_src;
 
 	cast_dst = (unsigned char *)dest;
 	cast_src = (unsigned char *)src;

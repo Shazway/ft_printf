@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 01:35:19 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 15:53:15 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:39:57 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t n;
+	size_t	n;
 
 	n = ft_strlen(s);
 	if ((char)c == '\0')

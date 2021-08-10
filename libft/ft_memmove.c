@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 00:40:43 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 15:52:46 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:39:09 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	if (!dest && !src)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 15:37:43 by telli             #+#    #+#             */
-/*   Updated: 2021/07/18 16:57:06 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:39:47 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "printf.h"
 long int	ft_strlen(const char *str)
 {
-	long int i;
+	long int	i;
 
 	i = 0;
 	while (str[i])

@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 15:04:46 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/01/27 15:52:35 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:38:20 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	dest = NULL;
 	while (lst)
 	{
-		if (!(temp = ft_lstnew(f(lst->content))))
+		temp = ft_lstnew(f(lst->content));
+		if (temp == NULL)
 		{
 			ft_lstclear(&dest, del);
 			return (NULL);

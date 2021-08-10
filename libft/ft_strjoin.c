@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 13:22:35 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 16:17:46 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:39:38 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_filldest(char const *s1, char const *s2, char *dest)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (s1[j])

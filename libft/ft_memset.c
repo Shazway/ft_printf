@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 00:08:06 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 15:52:49 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:39:12 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char *dest;
+	char	*dest;
 
 	dest = s;
 	while (n)

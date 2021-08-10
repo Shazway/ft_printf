@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 01:02:50 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 15:52:42 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:39:01 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *temp1;
-	unsigned char *temp2;
+	unsigned char	*temp1;
+	unsigned char	*temp2;
 
 	if (s1 == s2 || n == 0)
 		return (0);
