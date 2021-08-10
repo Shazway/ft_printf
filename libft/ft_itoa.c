@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:07:49 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 16:33:50 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:23:36 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_fill_array(long int n, char *dest, int count)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n < 0)

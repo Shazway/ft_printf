@@ -6,13 +6,13 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 01:23:58 by telli             #+#    #+#             */
-/*   Updated: 2021/01/27 15:53:28 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:23:31 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if ((c > 31 && c < 127))
 		return (1);
