@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 01:10:22 by telli             #+#    #+#             */
-/*   Updated: 2021/08/10 22:43:45 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 23:03:34 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
 					void *(*f)(void *), void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
-int					ft_malloc_array(int size, char *p, int count);
+int					ft_malloc_array(char *p, int count);
 #endif
