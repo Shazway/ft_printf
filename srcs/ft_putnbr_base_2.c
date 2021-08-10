@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 22:36:46 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 02:19:12 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 02:35:56 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_putnbr_base_2(long unsigned int nbr, char *base, t_data *parsing)
 	}
 	if (nbr >= 1)
 	{
+		printf("nb = %ld ", nbr);
 		ft_putchar2(base[nbr % ft_strlen(base)]);
 	}
 }
