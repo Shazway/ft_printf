@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 20:07:46 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 15:09:44 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:10:25 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(char *str)
 {
-	int i;
-	int sign;
-	int nb;
+	int	i;
+	int	sign;
+	int	nb;
 
 	nb = 0;
 	sign = 1;
