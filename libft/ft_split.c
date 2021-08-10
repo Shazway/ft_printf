@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 02:40:39 by telli             #+#    #+#             */
-/*   Updated: 2021/08/10 22:45:22 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 23:04:57 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_malloc_words(char const *s, char c, char **str, int count)
 			j++;
 			i++;
 		}
-		if (ft_malloc_array(1, str[k], j) == 0)
+		if (ft_malloc_array(str[k], j) == 0)
 			return ;
 		k++;
 	}
