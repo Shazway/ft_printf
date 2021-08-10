@@ -6,12 +6,11 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:07:49 by telli             #+#    #+#             */
-/*   Updated: 2021/08/10 23:48:55 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 23:51:43 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_fill_array(long int n, char *dest, int count)
 {
@@ -77,11 +76,4 @@ char	*ft_itoa(int n)
 	dest = NULL;
 	dest = ft_allocate_array(temp, dest, 1);
 	return (dest);
-}
-
-int main(void)
-{
-	char *str = ft_itoa(456);
-	printf("[%s]", str);
-	free(str);
 }
