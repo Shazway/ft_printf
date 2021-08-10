@@ -6,13 +6,13 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 20:07:46 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/02/11 23:22:23 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:09:44 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int i;
 	int sign;
