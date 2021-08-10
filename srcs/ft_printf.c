@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 14:45:30 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 14:56:12 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ void	ft_p(t_data *parsing, long unsigned int p)
 		write(1, &p, 1);
 	write(1, "0", 1);
 	write(1, "x", 1);
+	parsing->count += 3;
 	ft_putnbr_base_2(p, "0123456789abcdef", parsing);
 	parsing->type = 0;
 }
