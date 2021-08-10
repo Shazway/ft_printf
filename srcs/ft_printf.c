@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 14:58:31 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:00:02 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,12 @@ void	ft_s(t_data *parsing, char *s)
 {
 	int j;
 
+	if (!s || !*s)
+	{	
+		write(1, "(null)", 1);
+		parsing->count += 6;
+		return ;
+	}
 	if (parsing->flag == '-' && parsing->lwidth != 0)
 	{
 		printf("ici");
