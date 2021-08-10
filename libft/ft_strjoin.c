@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 13:22:35 by telli             #+#    #+#             */
-/*   Updated: 2021/08/10 15:39:38 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:50:55 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s2)
 		return ((char *)(s1));
 	i = ft_strlen((void *)s1) + ft_strlen((void *)s2) + 1;
-	if (!(dest = malloc(sizeof(char) * (i))))
+	dest = malloc(sizeof(char) * (i));
+	if (!dest)
 		return (NULL);
 	return (ft_filldest(s1, s2, dest));
 }
