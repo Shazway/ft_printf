@@ -6,13 +6,13 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 02:40:39 by telli             #+#    #+#             */
-/*   Updated: 2021/08/10 15:39:29 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 15:44:16 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_words(char const *s, char c)
+int	ft_count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -33,9 +33,9 @@ int		ft_count_words(char const *s, char c)
 
 void	ft_malloc_words(char const *s, char c, char **str, int count)
 {
-	int i;
-	int k;
-	int j;
+	int	i;
+	int	k;
+	int	j;
 
 	i = 0;
 	k = 0;
@@ -57,9 +57,9 @@ void	ft_malloc_words(char const *s, char c, char **str, int count)
 
 char	**ft_fill(char const *s, char c, char **str)
 {
-	int i;
-	int k;
-	int j;
+	int	i;
+	int	k;
+	int	j;
 
 	i = 0;
 	k = 0;
