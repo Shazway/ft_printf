@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/09 21:00:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 01:29:31 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 02:00:51 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,5 @@ void			ft_putnbr_base(int nbr, char *base, t_data *parsing)
 		parsing->count++;
 	}
 	if (nbr > 0)
-	{
 		ft_putchar(base[nbr % ft_strlen(base)]);
-	}
 }
