@@ -6,11 +6,12 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 19:07:49 by telli             #+#    #+#             */
-/*   Updated: 2021/08/10 23:04:25 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/10 23:48:55 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_fill_array(long int n, char *dest, int count)
 {
@@ -38,20 +39,19 @@ char	*ft_fill_array(long int n, char *dest, int count)
 	return (dest);
 }
 
-char	*ft_allocate_array(long int n, char *dest)
+char	*ft_allocate_array(long int n, char *dest, int count)
 {
-	int			count;
 	long int	temp;
 
 	temp = n;
-	count = 1;
 	if (n < 0)
 		count++;
 	if (n < 0)
 		n = n * -1;
 	if (n >= 0 && n <= 9)
 	{
-		if (ft_malloc_array(dest, count) == 0)
+		dest = malloc(sizeof(char) * (count + 1));
+		if (!dest)
 			return (NULL);
 		dest[count] = '\0';
 		return (ft_fill_array(temp, dest, count));
@@ -61,7 +61,8 @@ char	*ft_allocate_array(long int n, char *dest)
 		n = n / 10;
 		count++;
 	}
-	if (ft_malloc_array(dest, count) == 0)
+	dest = malloc(sizeof(char) * count + 1);
+	if (!dest)
 		return (NULL);
 	dest[count] = '\0';
 	return (ft_fill_array(temp, dest, count - 1));
@@ -74,6 +75,13 @@ char	*ft_itoa(int n)
 
 	temp = n;
 	dest = NULL;
-	dest = ft_allocate_array(temp, dest);
+	dest = ft_allocate_array(temp, dest, 1);
 	return (dest);
+}
+
+int main(void)
+{
+	char *str = ft_itoa(456);
+	printf("[%s]", str);
+	free(str);
 }
