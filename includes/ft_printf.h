@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:03:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 01:39:35 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/11 18:36:09 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,12 @@ int		ft_printf(const char *str, ...);
 void	ft_parsing(char **str, t_data *parsing);
 void	ft_putnbr_base(int nbr, char *base, t_data *parsing);
 void	ft_putnbr_base_2(long unsigned int nbr, char *base, t_data *parsing);
+void	ft_s(t_data *parsing, char *s);
+void	ft_d(t_data *parsing, int nb);
+void	ft_hex(t_data *parsing, unsigned int nb);
+void	ft_p(t_data *parsing, long unsigned int p);
+void	ft_u(t_data *parsing, unsigned int u);
+void	ft_printarray(char *str, t_data *parsing);
+void	ft_printchar(char c, t_data *parsing);
 
 #endif
