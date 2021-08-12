@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 01:10:22 by telli             #+#    #+#             */
-/*   Updated: 2021/08/12 15:15:14 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:15:27 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void				ft_lstadd_front(t_list **alst, t_list *new);
 int					ft_lstsize(t_list *lst);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
-							void *(*f)(void *), void (*del)(void *));
+						void *(*f)(void *), void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 #endif
