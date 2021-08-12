@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:17:11 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/12 15:06:41 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:07:50 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int	ft_printf(const char *str, ...)
 	t_data	*parsing;
 	int		count;
 
-	if (!(parsing = malloc(sizeof(t_data))))
+	parsing = malloc(sizeof(t_data));
+	if (!parsing)
 		return (0);
 	parsing->count = 0;
 	va_start(parsing->argptr, str);
