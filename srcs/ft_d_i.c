@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 18:32:58 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/12 15:41:28 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:47:02 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_d(t_data *parsing, int nb)
 		parsing->count++;
 		return ;
 	}
-	if(nb < 0)
+	if (nb < 0)
 		parsing->count++;
 	parsing->count++;
 	ft_putnbr_base(nb, "0123456789", parsing);
