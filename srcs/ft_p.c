@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 23:55:50 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/12 15:35:36 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:35:56 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_p(t_data *parsing, long unsigned int p)
 	if (p == 0)
 	{
 		write(1, "0", 1);
-		parsing->count += 2;
+		parsing->count += 3;
 		return ;;
 
 	}
