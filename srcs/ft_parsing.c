@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 17:32:04 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/10 00:37:26 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:01:32 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_initialize(t_data *parsing)
 	parsing->asterisk = 0;
 	parsing->type = 0;
 }
-
 void	ft_flag(char **str, t_data *parsing)
 {
 	while (*str && **str && (**str == '-' || **str == '0'))
@@ -59,7 +58,6 @@ void	ft_precision(char **str, t_data *parsing)
 	while (*str && **str && ft_isdigit(**str))
 		(*str)++;
 }
-
 void	ft_parsing(char **str, t_data *parsing)
 {
 	ft_initialize(parsing);
@@ -67,5 +65,4 @@ void	ft_parsing(char **str, t_data *parsing)
 	ft_width(str, parsing);
 	ft_precision(str, parsing);
 	parsing->type = **str;
-	//printf("flag = %d\nwidth = %d %d\nprecision = %d %d\ntype = %c\n", parsing->flag, parsing->width, parsing->lwidth, parsing->precision, parsing->lprecision, parsing->type);
 }
