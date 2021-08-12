@@ -6,7 +6,7 @@
 /*   By: tmoragli <tmoragli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:03:56 by tmoragli          #+#    #+#             */
-/*   Updated: 2021/08/11 18:36:09 by tmoragli         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:59:45 by tmoragli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include "../libft/libft.h"
-typedef struct		s_data
+typedef struct s_data
 {
 	char	flag;
 	int		width;
